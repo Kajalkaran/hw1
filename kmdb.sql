@@ -137,3 +137,15 @@
 
 -- The SQL statement for the cast output
 -- TODO!
+DROP TABLE IF EXISTS movies;
+CREATE TABLE movies(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT,
+    release_year INTEGER,
+    mpaa_rating TEXT,
+    studio TEXT
+);
+INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("Batman Begins", 2005, "PG-13", "Warner Bros");
+INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight", 2008, "PG-13", "Warner Bros");
+INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight Rises", 2012, "PG-13", "Warner Bros");
+
