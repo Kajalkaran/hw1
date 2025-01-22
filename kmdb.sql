@@ -138,22 +138,73 @@
 -- The SQL statement for the cast output
 -- TODO!
 DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS studios;
+DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS roles;
+CREATE TABLE studios(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    studio_name TEXT
+);
 CREATE TABLE movies(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT,
     release_year INTEGER,
     mpaa_rating TEXT,
-    studio TEXT
+    studio_id INTEGER
 );
-INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("Batman Begins", 2005, "PG-13", "Warner Bros");
-INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight", 2008, "PG-13", "Warner Bros");
-INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight Rises", 2012, "PG-13", "Warner Bros");
-
-DROP TABLE IF EXISTS top_cast;
-CREATE TABLE top_cast(
+CREATE TABLE actors(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    actor_name TEXT,
-    actor_role_name TEXT,
-    movies_id INTEGER
+    actor_name TEXT
 );
+CREATE TABLE roles(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_id INTEGER,
+    actor_id INTEGER,
+    character_name TEXT
+);
+INSERT INTO studios(studio_name) VALUES("Warner Bros");
+
+INSERT INTO movies(title, release_year, mpaa_rating, studio_id) VALUES("Batman Begins", 2005, "PG-13", 1);
+INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight", 2008, "PG-13", 1);
+INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight Rises", 2012, "PG-13", 1);
+
+INSERT INTO actors(actor_name) VALUES("Christian Bale");
+INSERT INTO actors(actor_name) VALUES("Michael Caine");
+INSERT INTO actors(actor_name) VALUES("Liam Neeson");
+INSERT INTO actors(actor_name) VALUES("Katie Holmes");
+INSERT INTO actors(actor_name) VALUES("Gary Oldman");
+INSERT INTO actors(actor_name) VALUES("Heath Ledger");
+INSERT INTO actors(actor_name) VALUES("Aaron Eckhart");
+INSERT INTO actors(actor_name) VALUES("Maggie Gyllenhaal");
+INSERT INTO actors(actor_name) VALUES("Tom Hardy");
+INSERT INTO actors(actor_name) VALUES("Joseph Gordon-Levitt");
+INSERT INTO actors(actor_name) VALUES("Anne Hathaway");
+
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(1, 1, "Bruce Wayne");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(1, 2, "Michael Caine");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(1, 3, "Ra's Al Ghul");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+
+
+
+
+
+
+
+
+
+
+
+
+
 
