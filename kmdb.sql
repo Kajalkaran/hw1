@@ -208,6 +208,13 @@ INNER JOIN movies ON roles.movie_id = movies.id
 INNER JOIN actors ON roles.actor_id = actors.id
 ORDER BY movies.title, roles.id;
 
+SELECT movies.id, movies.title, actors.actor_name, roles.character_name
+FROM roles
+INNER JOIN movies ON roles.movie_id = movies.id
+INNER JOIN actors ON roles.actor_id = actors.id
+ORDER BY movies.title; 
+
+
 
 
 
