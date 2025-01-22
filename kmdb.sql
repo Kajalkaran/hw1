@@ -163,10 +163,12 @@ CREATE TABLE roles(
     character_name TEXT
 );
 INSERT INTO studios(studio_name) VALUES("Warner Bros");
+INSERT INTO studios(studio_name) VALUES("Warner Bros");
+INSERT INTO studios(studio_name) VALUES("Warner Bros");
 
 INSERT INTO movies(title, release_year, mpaa_rating, studio_id) VALUES("Batman Begins", 2005, "PG-13", 1);
-INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight", 2008, "PG-13", 1);
-INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight Rises", 2012, "PG-13", 1);
+INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight", 2008, "PG-13", 2);
+INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight Rises", 2012, "PG-13", 3);
 
 INSERT INTO actors(actor_name) VALUES("Christian Bale");
 INSERT INTO actors(actor_name) VALUES("Michael Caine");
@@ -181,19 +183,31 @@ INSERT INTO actors(actor_name) VALUES("Joseph Gordon-Levitt");
 INSERT INTO actors(actor_name) VALUES("Anne Hathaway");
 
 INSERT INTO roles(movie_id, actor_id, character_name) VALUES(1, 1, "Bruce Wayne");
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES(1, 2, "Michael Caine");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(1, 2, "Alfred");
 INSERT INTO roles(movie_id, actor_id, character_name) VALUES(1, 3, "Ra's Al Ghul");
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
-INSERT INTO roles(movie_id, actor_id, character_name) VALUES
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(1, 4, "Rachel Dawes");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(1, 5, "Commissioner Gordon");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(2, 1, "Bruce Wayne");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(2, 6, "Joker");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(2, 7, "Harvey Dent");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(2, 2, "Alfred");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(2, 8, "Rachel Dawes");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(3, 1, "Bruce Wayne");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(3, 5, "Commissioner Gordon");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(3, 9, "Bane");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(3, 10, "John Blake");
+INSERT INTO roles(movie_id, actor_id, character_name) VALUES(3, 11, "Selina Kyle");
+
+SELECT title, release_year, mpaa_rating, studios.studio_name
+FROM movies
+INNER JOIN studios ON movies.studio_id = studios.id;
+
+SELECT movies.title, actors.actor_name, roles.character_name
+FROM roles
+INNER JOIN movies ON roles.movie_id = movies.id
+INNER JOIN actors ON roles.actor_id = actors.id
+ORDER BY movies.title, roles.id;
+
 
 
 
