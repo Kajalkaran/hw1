@@ -149,3 +149,11 @@ INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("Batman Begi
 INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight", 2008, "PG-13", "Warner Bros");
 INSERT INTO movies(title, release_year, mpaa_rating, studio) VALUES("The Dark Knight Rises", 2012, "PG-13", "Warner Bros");
 
+DROP TABLE IF EXISTS top_cast;
+CREATE TABLE top_cast(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor_name TEXT,
+    actor_role_name TEXT,
+    movies_id INTEGER
+);
+
