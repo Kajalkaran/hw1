@@ -194,9 +194,18 @@ INSERT INTO roles(movie_id, actor_id, character_name) VALUES(3, 9, "Bane");
 INSERT INTO roles(movie_id, actor_id, character_name) VALUES(3, 10, "John Blake");
 INSERT INTO roles(movie_id, actor_id, character_name) VALUES(3, 11, "Selina Kyle");
 
+.print "Movies"
+.print "======"
+.print ""
+
 SELECT movies.title, movies.release_year, movies.mpaa_rating, studios.studio_name
 FROM movies
 INNER JOIN studios ON movies.studio_id = studios.id;
+
+.print ""
+.print "Top Cast"
+.print "========"
+.print ""
 
 SELECT movies.title, actors.actor_name, roles.character_name
 FROM roles
